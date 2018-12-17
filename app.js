@@ -12,6 +12,7 @@ require('./config/passport')(passport);
 
 // Load Routes
 const auth = require('./routes/auth');
+const index = require('./routes/index');
 
 // Load Keys
 const keys = require('./config/keys');
@@ -26,10 +27,6 @@ mongoose.connect(keys.mongoURI, {
   .catch(err => console.log(err));
 
 const app = express();
-
-app.get('/', (req, res) => {
-  res.send('It Works!');
-});
 
 app.use(cookieParser());
 app.use(session({
@@ -49,6 +46,7 @@ app.use((req, res, next) => {
 });
 
 // Use Routes
+app.use('/', index);
 app.use('/auth', auth);
 
 
