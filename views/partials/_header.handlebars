@@ -1,0 +1,19 @@
+<nav class="header-style">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center">NewsFeed</a>
+            {{!-- Right NAV --}}
+            <ul class="right hide-on-small-only">
+                {{#if user}}
+                <li><a href="#">Welcome {{user.firstName}}</a></li>
+                <li><a href="/auth/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
+                {{else}}
+                <li>Login</li>
+                {{/if}}
+            </ul>
+            <ul class="left hide-on-small-only">
+                <li><i class="fa fa-feed"></i> News Feed</li>
+            </ul>
+        </div>
+    </div>
+</nav>
