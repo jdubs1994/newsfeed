@@ -32,7 +32,14 @@ router.get('/add', ensureAuthenticated, (req, res) => {
 });
 
 router.get('/edit/:id', ensureAuthenticated, (req, res) => {
-    res.render('articles/edit');
+    Article.findOne({
+        _id: req.params.id
+    })
+        .then(article => {
+            res.render('articles/edit', {
+                article: article
+            });
+        })
 });
 
 router.post('/', (req,res) => {

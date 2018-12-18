@@ -1,1 +1,18 @@
-<h1>Edit</h1>
+<h1>Edit Article</h1>
+<div class="row">
+    <form action="/articles" class="col s12" method="POST">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" name="title" value="{{article.title}}">
+                <label for="title">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <h5>Write your Article!</h5>
+                <textarea name="body">{{article.body}}</textarea>
+            </div>
+        </div>
+        <input type="submit" value="Save" class="btn">
+    </form>
+</div>
