@@ -6,7 +6,13 @@ const User = mongoose.model('users');
 const {ensureAuthenticated} = require('../helpers/auth');
 
 router.get('/', (req, res) => {
-    res.render('articles/index');
+    Article.find()
+        .populate('user')
+        .then(articles => {
+            res.render('articles/index', {
+                articles: articles
+            });
+        })
 });
 
 router.get('/add', ensureAuthenticated, (req, res) => {
