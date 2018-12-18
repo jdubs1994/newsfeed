@@ -56,3 +56,27 @@ exports.createUserWithArticle = createUserWithArticle = (callback) => {
         }
     });
 }
+
+exports.createUserWithArticleAndComment = createUserWithArticleAndComment = (callback) => {
+    createUser((err, user) => {
+        if (err) {
+            callback(err, null);
+        } else {
+            ArticleModel.create({
+                title: faker.name.title(),
+                body: faker.lorem.text(),
+                comments: [{
+                    commentBody: faker.lorem.text()
+                }],
+                userId: user._id
+            }, (err, article) => {
+                if (err) {
+                    callback(err, null);
+                } else {
+                    user.articles = [article]
+                    callback(null, user);  
+                }      
+            });
+        }
+    });
+}
