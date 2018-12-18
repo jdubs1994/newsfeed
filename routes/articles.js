@@ -116,7 +116,7 @@ router.post('/', (req,res) => {
     const newArticle = {
         title: req.body.title,
         body: req.body.body,
-        user: req.user.id
+        user: req.user ? req.user.id : req.body.userId
     }
 
     new Article(newArticle)
@@ -124,7 +124,7 @@ router.post('/', (req,res) => {
         .then(article => {
             res.redirect(`/articles/show/${article.id}`)
         })
-})
+});
 
 function isUserNullOrUndefined(user) {
     

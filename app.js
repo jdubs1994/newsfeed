@@ -30,9 +30,12 @@ const {
 } = require('./helpers/hbs');
 
 // Map global promises
-mongoose.Promise = global.Promise;
+mongoose.Promise = Promise;
 // Mongoose Connect
-mongoose.connect(keys.mongoURI, {
+
+const env = process.env.NODE_ENV;
+
+mongoose.connect(keys[env].mongoURI, {
   useMongoClient:true
 })
   .then(() => console.log('MongoDB Connected'))
@@ -88,3 +91,5 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server started on port ${port}`)
 });
+
+module.exports = app;

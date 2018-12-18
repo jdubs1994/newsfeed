@@ -1,6 +1,7 @@
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mongoose = require('mongoose');
-const keys = require('./keys');
+const env = process.env.NODE_ENV;
+const keys = require('./keys')[env];
 // Load user model
 const User = mongoose.model('users');
 

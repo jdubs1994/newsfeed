@@ -48,4 +48,4 @@ const ArticleSchema = new Schema({
 });
 
 // Create collection and add schema
-mongoose.model('articles', ArticleSchema, 'articles');
+module.exports = mongoose.model('articles', ArticleSchema, 'articles');
