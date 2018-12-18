@@ -11,4 +11,5 @@ body {
   .article-text{
     white-space: normal;
     overflow: hidden;
+    min-height: 50px
   }

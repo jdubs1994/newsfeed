@@ -42,6 +42,22 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
         })
 });
 
+router.put('/:id', (req,res) => {
+    Article.findOne({
+        _id: req.params.id
+    })
+        .then(article => {
+            article.title = req.body.title;
+            article.body = req.body.body;
+            article.edited = true
+
+            article.save()
+                .then(article => {
+                    res.redirect('/')
+                })
+        })
+})
+
 router.post('/', (req,res) => {
     const newArticle = {
         title: req.body.title,
