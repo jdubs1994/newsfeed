@@ -19,4 +19,16 @@ module.exports = {
     formatDate: function(date, format){
         return moment(date).fromNow();
       },
+
+      editIcon: function(articleUser, loggedUser, articleId, floating = true){
+        if(articleUser == loggedUser){
+          if(floating){
+            return `<a href="/articles/edit/${articleId}" class="btn-floating halfway-fab red"><i class="fa fa-pencil"></i></a>`;
+          } else {
+            return `<a href="/articles/edit/${articleId}"><i class="fa fa-pencil"></i></a>`;
+          }
+        } else {
+          return '';
+        }
+      }
   }

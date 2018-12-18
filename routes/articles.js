@@ -8,6 +8,7 @@ const {ensureAuthenticated} = require('../helpers/auth');
 router.get('/', (req, res) => {
     Article.find()
         .populate('user')
+        .sort({date: 'desc'})
         .then(articles => {
             res.render('articles/index', {
                 articles: articles
@@ -37,9 +38,13 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
         _id: req.params.id
     })
         .then(article => {
-            res.render('articles/edit', {
-                article: article
-            });
+            if(article.user != req.user.id) {
+                res.redirect('/articles');
+            }else {
+                res.render('articles/edit', {
+                    article: article
+                });
+            }
         })
 });
 
@@ -69,6 +74,19 @@ router.post('/comment/:id', (req,res) => {
             commentUser: req.user && req.user.id || '5c19172cc29dfa6566c5ebc1'
         }
         article.comments.unshift(newComment);
+        article.save()
+            .then(article => {
+                res.redirect(`/articles/show/${article.id}`)
+            })
+    })
+})
+
+router.post('/like/:id', (req,res) => {
+    Article.findOne({
+        _id: req.params.id
+    })
+    .then(article => {
+        article.articleLikes = article.articleLikes += 1
         article.save()
             .then(article => {
                 res.redirect(`/articles/show/${article.id}`)
