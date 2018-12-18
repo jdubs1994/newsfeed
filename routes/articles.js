@@ -101,8 +101,6 @@ router.post('/comment/like/:id', (req,res) => {
     .then(article => {
          article.comments.map((value) => {
              if(value._id == req.params.id) {
-                //  value.commentLikes += 1
-                //  res.redirect(`/articles/show/${article.id}`)
                 value.commentLikes += 1
 
                 article.save()
@@ -111,12 +109,6 @@ router.post('/comment/like/:id', (req,res) => {
                     })
              }
          })
-
-        // article.articleLikes = article.articleLikes += 1
-        // article.save()
-        //     .then(article => {
-        //         res.redirect(`/articles/show/${article.id}`)
-        //     })
     })
 })
 
