@@ -10,15 +10,17 @@
             </div>
             <div class="card-content center-align">
                 <h5>{{title}}</h5>
-                <p class="article-text">{{body}}</p>
+                <p class="article-text">{{{truncate body 150}}}</p>
                 <br>
                 <div class="chip">
                     <img src="{{user.image}}" alt="Contact Person">
                     {{user.firstName}} {{user.lastName}}
                 </div>
+                <p>Likes: {{articleLikes}}</p>
+                <p>Comments: {{comments.length}}</p>
             </div>
             <div class="card-action center-align">
-            <div class="btn grey" href="/articles/show/{{id}}">Read More</div>
+            <a class="btn grey" href="/articles/show/{{id}}">Read More</a>
             </div>
         </div>
     </div>
