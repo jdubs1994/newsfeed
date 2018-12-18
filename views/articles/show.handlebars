@@ -19,6 +19,19 @@
                 </form>
             </div>
         </div>
+        {{#each article.comments}}
+        <div class="card">
+            <div class="card-content">
+                <h5>{{commentBody}}</h5>
+                    <div class="chip">
+                    <img src="{{commentUser.image}}">
+                    {{commentUser.firstName}} {{commentUser.lastName}}
+                </div>
+                <br>
+                <small>Posted: {{formatDate commentDate}}</small>
+            </div>
+        </div>
+        {{/each}}
     </div>
     <div class="col s12 m3">
         <div class="card center-align">
