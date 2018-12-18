@@ -86,11 +86,37 @@ router.post('/like/:id', (req,res) => {
         _id: req.params.id
     })
     .then(article => {
-        article.articleLikes = article.articleLikes += 1
+        article.articleLikes += 1
         article.save()
             .then(article => {
                 res.redirect(`/articles/show/${article.id}`)
             })
+    })
+})
+
+router.post('/comment/like/:id', (req,res) => {
+    Article.findOne({
+        'comments._id': req.params.id
+    })
+    .then(article => {
+         article.comments.map((value) => {
+             if(value._id == req.params.id) {
+                //  value.commentLikes += 1
+                //  res.redirect(`/articles/show/${article.id}`)
+                value.commentLikes += 1
+
+                article.save()
+                    .then(updatedArticle => {
+                        res.redirect(`/articles/show/${updatedArticle.id}`)
+                    })
+             }
+         })
+
+        // article.articleLikes = article.articleLikes += 1
+        // article.save()
+        //     .then(article => {
+        //         res.redirect(`/articles/show/${article.id}`)
+        //     })
     })
 })
 

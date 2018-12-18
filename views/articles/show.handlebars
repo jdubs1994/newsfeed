@@ -36,7 +36,12 @@
                     {{commentUser.firstName}} {{commentUser.lastName}}
                 </div>
                 <br>
+                <small>Likes: {{commentLikes}}</small>
                 <small>Posted: {{formatDate commentDate}}</small>
+                <br>
+                    <form action="/articles/comment/like/{{_id}}" method="POST">
+                    <input type="submit" value="Like" class="btn">
+                </form>
             </div>
         </div>
         {{/each}}
