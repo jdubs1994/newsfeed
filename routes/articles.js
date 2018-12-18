@@ -15,6 +15,18 @@ router.get('/', (req, res) => {
         })
 });
 
+router.get('/show/:id', (req,res) => {
+    Article.findOne({
+        _id: req.params.id
+    })
+        .populate('user')
+        .then(article => {
+            res.render('articles/show', {
+                article: article
+            });
+        })
+})
+
 router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('articles/add');
 });

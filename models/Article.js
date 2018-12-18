@@ -26,7 +26,7 @@ const ArticleSchema = new Schema({
       }, 
       commentDate: {
           type: Date,
-          default: Date.now()
+          default: Date.now
       },
       commentUser: {
           type: Schema.Types.ObjectId,
@@ -43,7 +43,7 @@ const ArticleSchema = new Schema({
     },
     date: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     }
 });
 
