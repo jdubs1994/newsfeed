@@ -31,6 +31,10 @@ router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('articles/add');
 });
 
+router.get('/edit/:id', ensureAuthenticated, (req, res) => {
+    res.render('articles/edit');
+});
+
 router.post('/', (req,res) => {
     const newArticle = {
         title: req.body.title,
