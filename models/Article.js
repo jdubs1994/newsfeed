@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Shema
-const UserSchema = new Schema({
+const ArticleSchema = new Schema({
   title:{
     type:String,
     required: true
@@ -16,7 +16,8 @@ const UserSchema = new Schema({
       default: false
   },
   articleLikes: {
-      type: Number
+      type: Number,
+      default: 0
   },
   comments: [{
       commentBody: {
@@ -32,7 +33,8 @@ const UserSchema = new Schema({
           ref: 'users'
       },
       commentLikes: {
-        type: Number
+        type: Number,
+        default: 0
       }
   }],
     user: {
