@@ -58,6 +58,23 @@ router.put('/:id', (req,res) => {
         })
 })
 
+router.post('/comment/:id', (req,res) => {
+    Article.findOne({
+        _id: req.params.id
+    })
+    .then(article => {
+        const newComment = {
+            commentBody: req.body.commentBody,
+            commentUser: req.user && req.user.id || '5c19172cc29dfa6566c5ebc1'
+        }
+        article.comments.unshift(newComment);
+        article.save()
+            .then(article => {
+                res.redirect(`/articles/show/${article.id}`)
+            })
+    })
+})
+
 router.post('/', (req,res) => {
     const newArticle = {
         title: req.body.title,
@@ -71,5 +88,9 @@ router.post('/', (req,res) => {
             res.redirect(`/articles/show/${article.id}`)
         })
 })
+
+function isUserNullOrUndefined(user) {
+    
+}
 
 module.exports = router;

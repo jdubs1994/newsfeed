@@ -7,6 +7,18 @@
                 {{{article.body}}}
             </div>
         </div>
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Comments</span>
+                <form action="/articles/comment/{{article.id}}" method="POST">
+                    <div class="input-field">
+                        <textarea name="commentBody" class="materialize-textarea"></textarea>
+                        <label >Add Comment</label>
+                    </div>
+                    <input type="submit" value="Submit" class="btn">
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col s12 m3">
         <div class="card center-align">
