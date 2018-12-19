@@ -12,7 +12,7 @@ body {
   .article-text{
     white-space: normal;
     overflow: hidden;
-    min-height: 50px
+    min-height: 150px;
   }
 
   .main-component-color {

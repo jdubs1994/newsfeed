@@ -1,18 +1,26 @@
 <div class="row">
     <div class="col s12 m9">
-        <h3>{{article.title}}
-            <small>{{{editIcon article.user.id user.id article.id false}}}</small>
-
-        </h3>
         <div class="card article">
+            <br>
+            <h3 class="center-align">{{article.title}}
+                <small>{{{editIcon article.user.id user.id article.id false}}}</small>
+
+            </h3>
             <div class="card-content">
-                <span class="card-title">{{formatDate article.date}}</span>
+                <span class="card-title">Posted: {{formatDate article.date}}</span>
+                <br>
                 {{{article.body}}}
                 <br>
                 <form action="/articles/like/{{article.id}}" method="POST">
                     <input type="submit" value="Like" class="btn">
                 </form>
-                
+                <br>
+                <div class="row">
+                    <div class="col s4">Comments: {{article.comments.length}}</div>
+                    <div class="col s4">Likes: {{article.articleLikes}}</div>
+                    <div class="col s4">Edited: {{article.edited}}</div>
+
+                </div>
             </div>
         </div>
         <div class="card">
@@ -39,7 +47,7 @@
                 <small>Likes: {{commentLikes}}</small>
                 <small>Posted: {{formatDate commentDate}}</small>
                 <br>
-                    <form action="/articles/comment/like/{{_id}}" method="POST">
+                <form action="/articles/comment/like/{{_id}}" method="POST">
                     <input type="submit" value="Like" class="btn">
                 </form>
             </div>
