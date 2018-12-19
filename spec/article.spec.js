@@ -75,7 +75,7 @@ describe("Article Unit Tests", () => {
       });
   });
 
-  it("Should allow the ownwer of the article to edit an article", done => {
+  it("Should allow the owner of the article to edit an article", done => {
     server(app)
       .put(`/articles/${testUserWithArticle.articles[0]._id}`)
       .send({
