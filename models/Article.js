@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create Shema
 const ArticleSchema = new Schema({
   title:{
     type:String,
@@ -47,5 +46,4 @@ const ArticleSchema = new Schema({
     }
 });
 
-// Create collection and add schema
 module.exports = mongoose.model('articles', ArticleSchema, 'articles');

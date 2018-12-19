@@ -11,15 +11,12 @@ const passport = require('passport');
 require('./models/User');
 require('./models/Article');
 
-// Passport Config
 require('./config/passport')(passport);
 
-// Load Routes
 const auth = require('./routes/auth');
 const index = require('./routes/index');
 const articles = require('./routes/articles');
 
-// Load Keys
 const keys = require('./config/keys');
 
 const {
@@ -29,9 +26,7 @@ const {
   editIcon,
 } = require('./helpers/hbs');
 
-// Map global promises
 mongoose.Promise = Promise;
-// Mongoose Connect
 
 const env = process.env.NODE_ENV;
 
@@ -68,11 +63,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
-// Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set global vars
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
   next();
@@ -80,7 +73,6 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Use Routes
 app.use('/', index);
 app.use('/auth', auth);
 app.use('/articles', articles);

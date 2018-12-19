@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create Shema
 const UserSchema = new Schema({
   googleID:{
     type:String,
@@ -22,6 +21,5 @@ const UserSchema = new Schema({
   }
 });
 
-// Create collection and add schema
 const userModel = mongoose.model('users', UserSchema);
 module.exports = userModel
