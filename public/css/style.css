@@ -19,6 +19,10 @@ main {
   background-color: #29a3ef;
 }
 
+.button-margin {
+  margin-top: 5px;
+}
+
 .card {
   background-color: #ffffff;
 }
