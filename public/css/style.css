@@ -1,39 +1,39 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #E6ECF0;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #e6ecf0;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
-  .article-text{
-    white-space: normal;
-    overflow: hidden;
-    min-height: 150px;
-  }
+.article-text {
+  white-space: normal;
+  overflow: hidden;
+  min-height: 150px;
+}
 
-  .main-component-color {
-    background-color: #29A3EF;
-  }
+.main-component-color {
+  background-color: #29a3ef;
+}
 
-  .card {
-    background-color: #FFFFFF;
-  }
+.card {
+  background-color: #ffffff;
+}
 
-  .nav-wrapper a{
-    font-weight: bold;
-  }
+.nav-wrapper a {
+  font-weight: bold;
+}
 
-  .btn {
-    background-color: #29A3EF;
-  }
+.btn {
+  background-color: #29a3ef;
+}
 
-  .link-color {
-    color: #29A3EF !important;
-  }
+.link-color {
+  color: #29a3ef !important;
+}
 
 .input-field textarea:focus + label {
   color: #2196f3 !important;
@@ -41,9 +41,9 @@ body {
 
 .row .input-field textarea:focus {
   border-bottom: 1px solid #2196f3 !important;
-  box-shadow: 0 1px 0 0 #2196f3 !important
+  box-shadow: 0 1px 0 0 #2196f3 !important;
 }
 
-.input-field input[type=text]:focus + label {
+.input-field input[type="text"]:focus + label {
   color: #000;
 }

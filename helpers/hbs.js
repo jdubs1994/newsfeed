@@ -1,34 +1,34 @@
-const moment = require('moment');
+const moment = require("moment");
 
 module.exports = {
-    truncate: function(str, len){
-        if (str.length > len && str.length > 0) {
-                var new_str = str + " ";
-                new_str = str.substr(0, len);
-                new_str = str.substr(0, new_str.lastIndexOf(" "));
-                new_str = (new_str.length > 0) ? new_str : str.substr(0, len);
-                return new_str + '...';
-            }
-            return str;
-      },
+  truncate: function(str, len) {
+    if (str.length > len && str.length > 0) {
+      var new_str = str + " ";
+      new_str = str.substr(0, len);
+      new_str = str.substr(0, new_str.lastIndexOf(" "));
+      new_str = new_str.length > 0 ? new_str : str.substr(0, len);
+      return new_str + "...";
+    }
+    return str;
+  },
 
-    stripTags: function(input){
-        return input.replace(/<(?:.|\n)*?>/gm, '');
-      },
+  stripTags: function(input) {
+    return input.replace(/<(?:.|\n)*?>/gm, "");
+  },
 
-    formatDate: function(date, format){
-        return moment(date).fromNow();
-      },
+  formatDate: function(date, format) {
+    return moment(date).fromNow();
+  },
 
-      editIcon: function(articleUser, loggedUser, articleId, floating = true){
-        if(articleUser == loggedUser){
-          if(floating){
-            return `<a href="/articles/edit/${articleId}" class="btn-floating halfway-fab red"><i class="fa fa-pencil"></i></a>`;
-          } else {
-            return `<a href="/articles/edit/${articleId}"><i class="fa fa-pencil"></i></a>`;
-          }
-        } else {
-          return '';
-        }
+  editIcon: function(articleUser, loggedUser, articleId, floating = true) {
+    if (articleUser == loggedUser) {
+      if (floating) {
+        return `<a href="/articles/edit/${articleId}" class="btn-floating halfway-fab red"><i class="fa fa-pencil"></i></a>`;
+      } else {
+        return `<a href="/articles/edit/${articleId}"><i class="fa fa-pencil"></i></a>`;
       }
+    } else {
+      return "";
+    }
   }
+};
