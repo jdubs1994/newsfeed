@@ -2,10 +2,10 @@
 
   - Install Node.js on your computer
   - Clone the repo: https://github.com/jdubs1994/newsfeed.git
-  - Navigate to the cloned repo and type "npm install"
+  - Navigate to the root of the cloned repo via terminal and type "npm install"
  
 # Starting Web Application
-  - Navigate to cloned repo and type 'npm run start:dev'
+  - Navigate to the root of the cloned repo via terminal and type 'npm run start:dev'
   - Input "http://localhost:5000/" into your browser and the site should be up and running (You will need a Google Account to Authenticate as im using Google oAuth)
 
 
