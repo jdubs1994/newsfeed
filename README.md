@@ -10,7 +10,7 @@
 
 
 # Running Tests
-MAKE SURE THE DEV SERVER ISNT RUNNING BEFORE RUNNING TESTS
+MAKE SURE THE DEV SERVER ISNT RUNNING BEFORE RUNNING TESTS.
 You can stop the server on mac via terminal ctrl + c and the same for windows pc's
 
 - Navigate to cloned repo and type 'npm test'
