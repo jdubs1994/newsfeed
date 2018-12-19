@@ -1,11 +1,11 @@
 <h1>Edit Article</h1>
 <div class="row">
     <form action="/articles/{{article.id}}?_method=PUT" class="col s12" method="POST">
-    <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="_method" value="PUT">
         <div class="row">
             <div class="input-field">
-                <input type="text" name="title" value="{{article.title}}">
-                <label for="title">Title</label>
+                <textarea name="title" class="materialize-textarea">{{article.title}}</textarea>
+                <label>Title</label>
             </div>
         </div>
         <div class="row">

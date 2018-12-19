@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #E6ECF0;
   }
 
   main {
@@ -13,3 +14,38 @@ body {
     overflow: hidden;
     min-height: 50px
   }
+
+  .main-component-color {
+    background-color: #29A3EF;
+  }
+
+  .card {
+    background-color: #FFFFFF;
+  }
+
+  .nav-wrapper a{
+    font-weight: bold;
+  }
+
+  .btn {
+    background-color: #29A3EF;
+  }
+
+  /* input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #29A3EF;
+    -webkit-box-shadow: 0 1px 0 0 #29A3EF;
+    box-shadow: 0 1px 0 0 #29A3EF;
+} */
+
+.input-field textarea:focus + label {
+  color: #2196f3 !important;
+}
+
+.row .input-field textarea:focus {
+  border-bottom: 1px solid #2196f3 !important;
+  box-shadow: 0 1px 0 0 #2196f3 !important
+}
+
+.input-field input[type=text]:focus + label {
+  color: #000;
+}
