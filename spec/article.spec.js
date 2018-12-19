@@ -18,11 +18,11 @@ describe("Article Unit Tests", () => {
     });
   });
 
-  it("Should render all the Articles", done => {
+  it("Should render articles page", done => {
     server(app)
       .get("/articles")
       .end((err, res) => {
-        expect(res.text).toContain("Index");
+        expect(res.text).toContain("Article's");
         done();
       });
   });

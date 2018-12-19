@@ -1,4 +1,4 @@
-<h1>Index</h1>
+<h1>Article's</h1>
 <div class="row">
     {{#each articles}}
     <div class="col s12 m4">
@@ -18,7 +18,8 @@
                 </div>
                 <p>Likes: {{articleLikes}}</p>
                 <p>Comments: {{comments.length}}</p>
-                <p>Edited: {{edited}}</p>
+                <br>
+                <p>Posted: {{formatDate date}}</p>
             </div>
             <div class="card-action center-align">
             <a class="btn" href="/articles/show/{{id}}">Read More</a>

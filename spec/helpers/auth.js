@@ -18,23 +18,6 @@ exports.createUser = createUser = (callback) => {
     })
 }
 
-/*
-exports.createArticle = createArticle = (callback) => {    
-    UserModel.create({
-        googleID: faker.random.uuid(),
-        firstName: faker.name.firstName(),
-        lastName: faker.name.lastName(),
-        email: faker.internet.email(),
-        image: faker.image.imageUrl()
-    }, (err, user) => {
-        if (err) {
-            callback(err, null);
-        } else {        
-            callback(null, user);  
-        }      
-    })
-}
-*/
 
 exports.createUserWithArticle = createUserWithArticle = (callback) => {
     createUser((err, user) => {
