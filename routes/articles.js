@@ -71,7 +71,7 @@ router.post('/comment/:id', (req,res) => {
     .then(article => {
         const newComment = {
             commentBody: req.body.commentBody,
-            commentUser: req.user && req.user.id || '5c19172cc29dfa6566c5ebc1'
+            commentUser: req.user && req.user.id || '5c1a59f291b42be2433444ae'
         }
         article.comments.unshift(newComment);
         article.save()
